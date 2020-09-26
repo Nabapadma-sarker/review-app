@@ -27,7 +27,7 @@ You will also see any lint errors in the console.
 
 ### Employee view
 
-Landing/Home Page: [http://localhost:3000](http://localhost:3000)
+Landing/Home Page: [http://localhost:3000](http://localhost:3000)<br/>
 About Page: [http://localhost:3000/about](http://localhost:3000/about)<br/>
 Login as Admin: [http://localhost:3000/admin](http://localhost:3000/admin) <br/>
 To login as admin please enter any name or email address, Username/Email and Password field is just empty validation check.
