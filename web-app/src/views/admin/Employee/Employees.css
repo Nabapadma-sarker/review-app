@@ -129,6 +129,12 @@ address p {
   padding: 1rem 0.5rem;
 }
 
+.review-rate {
+  font-size: 1.5rem;
+  color: red;
+  padding-left: 0.5rem;
+}
+
 /*-----*/
 
 @media only screen and (max-width: 768px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./NotFound.css";
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header/HeaderEmployee";
 import Footer from "../../components/Footer/Footer";
 
 const NotFound = () => {

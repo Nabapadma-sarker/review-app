@@ -89,6 +89,11 @@ input.is-invalid {
   background-color: var(--color-gary);
 }
 
+.btn-warning {
+  margin-bottom: 0.5rem;
+  background-color: var(--color-warning);
+}
+
 .btn-remove {
   margin-bottom: 0.5rem;
   background-color: var(--color-logo);
@@ -110,4 +115,9 @@ input.is-invalid {
 
 select {
   font-size: 1rem;
+}
+
+a.active {
+  color: #ff0024 !important;
+  font-weight: bold !important;
 }

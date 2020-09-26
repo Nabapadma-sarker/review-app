@@ -1,17 +1,16 @@
 import React, { useState, useContext } from "react";
-import Header from "../../components/Header/HeaderEmployee";
-import Footer from "../../components/Footer/Footer";
-import Photo from "../../assets/images/profile.jpg";
-import Modal from "../../components/Modal/Modal";
-import { EmployeeContext } from "../../contexts/EmployeeContext";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
+import Photo from "../../../assets/images/profile.jpg";
+import { EmployeeContext } from "../../../contexts/EmployeeContext";
+import Modal from "../../../components/Modal/Modal";
 
-const Assignment = () => {
+const Review = () => {
+  const [reviewModal, setReviewModal] = useState(false);
   const { employees } = useContext(EmployeeContext);
 
-  const [modal, setModal] = useState(false);
-
-  const modalToggle = () => {
-    setModal(!modal);
+  const reviewModalToggle = () => {
+    setReviewModal(!reviewModal);
   };
 
   return (
@@ -19,24 +18,14 @@ const Assignment = () => {
       <Header />
       <div className="container">
         <div className="employee-list-top">
-          <h3>Assignment List</h3>
-          <p>List of assignment review</p>
-          <div
-            type="button"
-            className="add-employee-button"
-            onClick={modalToggle}
-          >
-            <i
-              className="fas fa-plus-circle fa-2x"
-              title="add new employee"
-            ></i>
-          </div>
+          <h3>Reviews</h3>
+          <p>List of reviews</p>
         </div>
 
         <div className="employee-list">
           <div className="employee-box">
             <img className="profile-photo" src={Photo} alt="" />
-            <h4 className="employee-name">Leanne Graham</h4>
+            <h4 className="employee-name">Ervin Howell</h4>
             <div className="star-review">
               <i className="fas fa-star is-reviewed"></i>
               <i className="fas fa-star is-reviewed"></i>
@@ -46,13 +35,21 @@ const Assignment = () => {
             </div>
             <address>
               <p>
-                <b>Email:</b> refat@gmail.com
+                <b>Email:</b> example@example.com
               </p>
               <p>
-                <b>Phone:</b> 000-3333-7777
+                <b>Phone:</b> 000-7777-5555
+              </p>
+              <p>
+                <b>Status:</b> Reviewed
+              </p>
+              <p>
+                <b>Review by:</b> John Doe
+              </p>
+              <p>
+                <b>Date & Time:</b> 15:30:45, 10-15-2020
               </p>
             </address>
-            <p>Reviewed</p>
 
             <div className="btn-group">
               <button type="button" className="btn btn-disable">
@@ -62,7 +59,7 @@ const Assignment = () => {
           </div>
           <div className="employee-box">
             <img className="profile-photo" src={Photo} alt="" />
-            <h4 className="employee-name">John Doe</h4>
+            <h4 className="employee-name">Max William</h4>
             <div className="star-review">
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
@@ -72,16 +69,24 @@ const Assignment = () => {
             </div>
             <address>
               <p>
-                <b>Email:</b> refat@gmail.com
+                <b>Email:</b> example@example.com
               </p>
               <p>
-                <b>Phone:</b> 000-4444-5555
+                <b>Phone:</b> 000-7777-5555
+              </p>
+              <p>
+                <b>Status:</b> Not yet
+              </p>
+              <p>
+                <b>Review by:</b> ------
+              </p>
+              <p>
+                <b>Date & Time:</b> 00:00:00, 00-00-0000
               </p>
             </address>
-            <p>Review pending</p>
 
             <div className="btn-group">
-              <button type="button" className="btn btn-edit">
+              <button type="button" className="btn btn-edit" onClick={reviewModalToggle}>
                 Review
               </button>
             </div>
@@ -91,8 +96,8 @@ const Assignment = () => {
 
       <Footer />
 
-      {modal && (
-        <Modal title="Add review" closeModal={modalToggle}>
+      {reviewModal && (
+        <Modal title="Add review" closeModal={reviewModalToggle}>
           <div className="review-group">
             <label htmlFor="review-person">Review for:</label>
             <select name="review-person" id="review-person">
@@ -130,4 +135,4 @@ const Assignment = () => {
   );
 };
 
-export default Assignment;
+export default Review;

@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import "./AddEmployee.css";
-import Card from "../../../components/Card/Card";
-import { EmployeeContext } from "../../../contexts/EmployeeContext";
+import Card from "../../../../components/Card/Card";
+import { EmployeeContext } from "../../../../contexts/EmployeeContext";
 
-const AddEmployee = ({ closeModal }) => {
+const AddEmployee = ({ closeModal, props }) => {
   const [employee, setEmployee] = useState({
     name: "",
     email: "",
@@ -38,7 +38,6 @@ const AddEmployee = ({ closeModal }) => {
       });
     }
 
-    // props.history.push("/employees");
 
     const newEmployee = {
       name,
@@ -58,6 +57,11 @@ const AddEmployee = ({ closeModal }) => {
 
     setError({});
     closeModal();
+
+    // props.history.push("/");
+
+    // console.log(props)
+
   };
 
   // input onChange handler
@@ -76,7 +80,7 @@ const AddEmployee = ({ closeModal }) => {
           <div className="modal-header">Add employee</div>
 
           <div className="modal-body">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} method="POST">
               {/* <InputGroup
                 label="Name"
                 type="text"
@@ -121,7 +125,7 @@ const AddEmployee = ({ closeModal }) => {
               <div className="form-group">
                 <label htmlFor="pgone">Phone</label>
                 <input
-                  type="number"
+                  type="text"
                   name="phone"
                   id="phone"
                   value={phone}
@@ -143,7 +147,7 @@ const AddEmployee = ({ closeModal }) => {
                   Close
                 </button>
                 <button type="submit" className="btn btn-add">
-                  Add
+                  Add employee
                 </button>
               </div>
             </form>

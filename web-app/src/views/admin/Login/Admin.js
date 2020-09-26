@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Admin.css";
-import Card from "../../components/Card/Card";
+import Card from "../../../components/Card/Card";
 
 const Login = (props) => {
   const [employeeLogin, setEmployeeLogin] = useState({
@@ -18,7 +18,7 @@ const Login = (props) => {
 
     if (username === "") {
       return setError({
-        username: "Username is required",
+        username: "Username or Email is required",
       });
     }
 
@@ -28,7 +28,7 @@ const Login = (props) => {
       });
     }
 
-    props.history.push("/employees");
+    props.history.push("/admin/employees");
 
     setEmployeeLogin({
       username: "",
@@ -61,9 +61,9 @@ const Login = (props) => {
 
             <form className="employee-login-form" onSubmit={onSubmit}>
               <div className="form-group">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username/Email</label>
                 <input
-                  type="email"
+                  type="text"
                   name="username"
                   id="username"
                   value={username}

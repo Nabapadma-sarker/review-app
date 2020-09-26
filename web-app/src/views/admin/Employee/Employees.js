@@ -1,19 +1,25 @@
 import React, { useState, useContext } from "react";
 import "./Employees.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
 import Employee from "./Employee";
 import AddEmployee from "./AddEmployee/AddEmployee";
-import { EmployeeContext } from "../../contexts/EmployeeContext";
-import Modal from "../../components/Modal/Modal";
+import EditEmployee from "./EditEmployee/EditEployee";
+import { EmployeeContext } from "../../../contexts/EmployeeContext";
+import Modal from "../../../components/Modal/Modal";
 
 const Employees = () => {
   const [modal, setModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
   const [reviewModal, setReviewModal] = useState(false);
   const { employees } = useContext(EmployeeContext);
 
   const modalToggle = () => {
     setModal(!modal);
+  };
+
+  const editModalToggle = () => {
+    setEditModal(!editModal);
   };
 
   const reviewModalToggle = () => {
@@ -45,6 +51,7 @@ const Employees = () => {
             employees.map((employee) => (
               <Employee
                 open={reviewModalToggle}
+                openEditModal={editModalToggle}
                 key={employee.id}
                 employees={employee}
               />
@@ -62,6 +69,17 @@ const Employees = () => {
           <div className="modal-wrap">
             <div className="modal-content">
               <AddEmployee closeModal={modalToggle} />
+            </div>
+          </div>
+        </>
+      )}
+
+      {editModal && (
+        <>
+          <div className="back-drop" onClick={editModalToggle}></div>
+          <div className="modal-wrap">
+            <div className="modal-content">
+              <EditEmployee closeModal={editModalToggle} />
             </div>
           </div>
         </>

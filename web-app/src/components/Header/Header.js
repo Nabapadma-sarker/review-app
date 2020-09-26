@@ -1,12 +1,12 @@
 import React from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className="navbar">
       <div className="container navbar-wrapper">
-        <Link className="navbar-brand" to="/employees">
+        <Link className="navbar-brand" to="/admin/employees">
           <img
             src="https://image.paypay.ne.jp/page/common/images/img_logo.png"
             alt="logo"
@@ -14,24 +14,24 @@ const Header = () => {
         </Link>
 
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/employees">
-              Employee
-            </Link>
-          </li>
-          <li className="nav-item active">
-            <Link className="nav-link" to="/assingment">
-              Assignment
-            </Link>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/admin/employees">
+              Employees
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/reviews">
-              Review
-            </Link>
+            <NavLink className="nav-link" to="/admin/reviews">
+              Reviews
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">
-              About
+            <NavLink className="nav-link" to="/admin/assingment">
+              Assigns
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/admin/">
+              Logout
             </Link>
           </li>
         </ul>

@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import Photo from "../../assets/images/profile.jpg";
-// import { EmployeeContext } from "../../contexts/EmployeeContext";
+import React from "react";
+import Photo from "../../../assets/images/profile.jpg";
 
-const Review = ({ employees, open }) => {
-  const [assingTo, setAssignTo] = useState(false);
-  // const { removeEmployee } = useContext(EmployeeContext);
+const Review = ({ employees, open, openEditModal }) => {
 
   const { name, email, phone } = employees;
   return (
@@ -16,24 +13,9 @@ const Review = ({ employees, open }) => {
         <i className="fas fa-star is-reviewed"></i>
         <i className="fas fa-star is-reviewed"></i>
         <i className="fas fa-star is-reviewed"></i>
-        <i className="fas fa-star is-reviewed"></i>
+        <i className="fas fa-star"></i>
+        <span className="review-rate"> 4</span>/5
       </div>
-      <h5
-        className="assing-to"
-        title="Click to assign review"
-        onClick={() => setAssignTo(!assingTo)}
-      >
-        <i className="fas fa-user-edit" /> Assign to
-      </h5>
-
-      {assingTo && (
-        <input
-          type="text"
-          className="form-control"
-          placeholder="assignto@example.com"
-          onChange={() => {}}
-        />
-      )}
 
       <address>
         <p>
@@ -52,7 +34,7 @@ const Review = ({ employees, open }) => {
         <button type="button" className="btn btn-edit" onClick={open}>
           Review
         </button>
-        <button type="button" className="btn btn-gray">
+        <button type="button" className="btn btn-close" onClick={openEditModal}>
           Edit
         </button>
         <button type="button" className="btn btn-remove">

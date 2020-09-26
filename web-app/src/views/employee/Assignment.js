@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Photo from "../../assets/images/profile.jpg";
-import AddAssignment from "./AddAssignment";
+import ReviewFeedback from "./ReviewFeedback";
 
 const Assignment = () => {
   const [modal, setModal] = useState(false);
@@ -17,7 +17,7 @@ const Assignment = () => {
       <div className="container">
         <div className="employee-list-top">
           <h3>Assignment List</h3>
-          <p>List of assignment review</p>
+          <p>List of assignment</p>
           <div
             type="button"
             className="add-employee-button"
@@ -93,7 +93,7 @@ const Assignment = () => {
           <div className="back-drop" onClick={modalToggle}></div>
           <div className="modal-wrap">
             <div className="modal-content">
-              <AddAssignment closeModal={modalToggle} />
+              <ReviewFeedback closeModal={modalToggle} />
             </div>
           </div>
         </div>

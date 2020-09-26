@@ -1,10 +1,19 @@
 # review-app
 
+Back-end: [admin](https://github.com/hakkani/review-app/tree/master/admin)<br/>
+Front-end: [web-app](https://github.com/hakkani/review-app/tree/master/web-app)
+
+## Web Application
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installing all dependencies to run the project in local machine.
 
 ### `npm start`
 
@@ -13,6 +22,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+## Available Pages/Routes
+
+### Employee view
+
+Landing/Home Page: [http://localhost:3000](http://localhost:3000)
+About Page: [http://localhost:3000/about](http://localhost:3000/about)<br/>
+Login as Admin: [http://localhost:3000/admin](http://localhost:3000/admin) <br/>
+To login as admin please enter any name or email address, Username/Email and Password field is just empty validation check.
+
+### Admin view
+
+Employee List: [http://localhost:3000/admin/employees](http://localhost:3000/admin/employees) <br/>
+Review List: [http://localhost:3000/admin/reviews](http://localhost:3000/admin/reviews)<br/>
+Assignment List: [http://localhost:3000/admin/assingment](http://localhost:3000/admin/assingment)<br/>
+Admin Login: [http://localhost:3000/admin](http://localhost:3000/admin)<br/>
+To login as admin please enter any name or email address, Username/Email and Password field is just empty validation check.
 
 ### `npm test`
 
