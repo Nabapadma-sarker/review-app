@@ -1,0 +1,12 @@
+.about-heading {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-logo);
+  margin-top: 1rem;
+}
+
+.about-para {
+  padding-top: 0.8rem;
+  line-height: 30px;
+  text-align: justify;
+}

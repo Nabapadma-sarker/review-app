@@ -1,0 +1,84 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/*====== employee login ======*/
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-wrapper .card {
+  margin-top: 120px;
+}
+
+.employee-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.employee-login img {
+  max-width: 124px;
+  margin: 0 auto 2rem;
+}
+
+.login-heading {
+  font-size: 1.2em;
+  color: var(--color-logo);
+  line-height: 25px;
+}
+
+.employee-login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group-admin {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-group-admin label,
+.form-group-admin input {
+  width: 100%;
+  display: block;
+}
+
+.form-group-admin label {
+  padding-bottom: 0.5rem;
+}
+
+.form-group-admin input {
+  padding: 0.8rem 0.6rem;
+  border: 1px solid #a0aec0;
+  border-radius: 3px;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid var(--color-secondary);
+}
+
+.btn-login {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  background-color: var(--color-main);
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+/*====== media query ======*/
+@media only screen and (max-width: 576px) {
+  .login-wrapper .card {
+    margin-top: 2rem;
+  }
+}

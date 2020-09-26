@@ -1,0 +1,138 @@
+.employee-list-top {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.add-employee-button {
+  position: absolute;
+  top: 25%;
+  right: 3%;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+.add-employee-button i:hover {
+  opacity: 0.9;
+}
+
+.employee-list-top h3 {
+  font-size: 2rem;
+  color: var(--color-logo);
+}
+
+.employee-list-top p {
+  font-size: 1.2rem;
+  color: var(--color-main);
+}
+
+.employee-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.employee-list > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #f2f2f2;
+  margin-top: -4rem;
+  margin-bottom: 0.8rem;
+  background-color: #f2f2f2;
+}
+
+.employee-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.star-review {
+  padding-bottom: 0.5rem;
+}
+
+.star-review i {
+  padding: 0.1rem;
+}
+
+/* .star-review i:hover,
+.star-review i:hover {
+  color: #ffc400;
+} */
+
+address p {
+  line-height: 1.5;
+  margin: 0.3rem 0;
+}
+
+.employee-box p {
+  text-align: justify;
+}
+
+.btn-group {
+  margin-top: 1rem;
+}
+
+.assing-to {
+  cursor: pointer;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+
+.assing-to i {
+  color: var(--color-logo);
+}
+
+.form-control {
+  max-width: 300px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-main);
+}
+
+.review-group {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.review-group label,
+.review-group select,
+.review-group input {
+  line-height: 2;
+  width: 100%;
+  overflow: hidden;
+}
+
+.text-area {
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+
+/*-----*/
+
+@media only screen and (max-width: 768px) {
+  .employee-list {
+    grid-template-columns: 1fr;
+  }
+}

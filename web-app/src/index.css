@@ -1,0 +1,113 @@
+:root {
+  --color-logo: #e8003f;
+  --color-main: #403a39;
+  --color-primary: #27008a;
+  --color-secondary: #0392e2;
+  --color-warning: #ffc107;
+  --color-gary: #6c757d;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  color: #423c3c;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -ms-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 6rem;
+}
+
+/*====== error message ======*/
+.is-valid {
+  display: none;
+}
+
+.invalid-feedback {
+  display: block;
+  padding-top: 0.3rem;
+  color: var(--color-logo);
+}
+
+input.is-invalid {
+  border: 1px solid var(--color-logo);
+}
+
+/*============buttons===========*/
+.btn {
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0 0.25rem;
+  background-color: #6c747e;
+}
+
+.btn-edit,
+.btn-add {
+  margin-bottom: 0.5rem;
+  background-color: var(--color-secondary);
+}
+
+.btn-close {
+  margin-bottom: 0.5rem;
+  background-color: var(--color-gary);
+}
+
+.btn-remove {
+  margin-bottom: 0.5rem;
+  background-color: var(--color-logo);
+}
+
+.btn-disable {
+  margin-bottom: 0.5rem;
+  background-color: var(--color-gary);
+  cursor: not-allowed;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.is-reviewed {
+  color: var(--color-warning);
+}
+
+select {
+  font-size: 1rem;
+}

@@ -1,0 +1,19 @@
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+   background-color: #ffffff;
+   padding: 1rem;
+   border: 1px solid #eaeced;
+   border-radius: 5px;
+}
+
+.card:hover {
+   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 600px) {
+   .card {
+      max-width: 90%;
+      margin: auto;
+   }
+}

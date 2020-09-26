@@ -1,0 +1,44 @@
+/*=============back-drop==========*/
+.modal-back-drop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-main-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-review {
+  width: 500px;
+  position: fixed;
+  top: 67px;
+  z-index: 500;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border: 1px solid #eaeced;
+  border-radius: 5px;
+}
+
+.modal-header-review {
+  font-size: 1.3rem;
+  border-bottom: 2px solid #f2f2f2;
+  color: var(--color-logo);
+  padding: 0 1rem 0.9rem;
+  text-align: center;
+  margin: 0 -2rem;
+}
+
+.modal-footer-review {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
