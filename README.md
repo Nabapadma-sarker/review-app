@@ -1,21 +1,39 @@
 # review-app
 
-Back-end: [admin](https://github.com/hakkani/review-app/tree/master/admin)<br/>
-Front-end: [web-app](https://github.com/hakkani/review-app/tree/master/web-app)
+Back-end: [back-end](https://github.com/hakkani/review-app/tree/master/back-end)<br/>
+Front-end: [web-app](https://github.com/hakkani/review-app/tree/master/web-app)<br/>
 
-## Web Application
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Available Scripts For Back-end(REST API)
 
 In the project directory, you can run:
 
 ### `npm install`
 
-Installing all dependencies to run the project in local machine.
-
 ### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:8080](http://localhost:8080) to view it in the postman.<br/>
+
+Create Mysql Schema, Schema name : 'review-app' then, 
+import database in Mysql Workbench [Import Mysql Database](https://github.com/hakkani/review-app/blob/master/review-app.sql).
+If the node server runs in port 8080. The front-end application uses the localhost:8080 to read, create, update, and delete the employee list. In this project just use the read operation to fetch the employee list.
+
+Database: In database create 3 tables, 1. employees, 2. reviews and 3. review_assignments<br/>
+employees table: <br/>
+reviews table: <br/>
+review_assignments table: <br/>
+
+## Web Application
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts For Front-end(Web application)
+
+In the project directory, you can run:
+
+### `npm install`
+
+### `npm start or sudo npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
