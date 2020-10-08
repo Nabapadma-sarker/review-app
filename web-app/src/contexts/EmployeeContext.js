@@ -54,7 +54,7 @@ const EmployeeContextProvider = (props) => {
 
   // Get request by axios
   useEffect(() => {
-    axios.get("http://localhost:8080/employees").then((response) => {
+    axios.get("http://localhost:8000/employees").then((response) => {
       setEmployee(response.data);
     });
   }, []);
