@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./AddEmployee.css";
 import Card from "../../../../components/Card/Card";
 import { EmployeeContext } from "../../../../contexts/EmployeeContext";
+import axios from "axios";
 
 const AddEmployee = ({ closeModal, props }) => {
   const [employee, setEmployee] = useState({
@@ -45,7 +46,17 @@ const AddEmployee = ({ closeModal, props }) => {
       phone,
     };
 
-    addEmployee(newEmployee);
+    
+      axios.post('http://localhost:8000/employees', newEmployee)
+      .then(function (response) {
+        console.log(response);
+        // setEmployee();
+        addEmployee(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
 
     console.log(employee);
 

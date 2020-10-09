@@ -1,4 +1,4 @@
-const Employee = require("../models/employee.model");
+const Employee = require('../models').employee;
 
 // Create and Save a new Employee
 exports.create = (req, res) => {
@@ -17,25 +17,20 @@ exports.create = (req, res) => {
   });
 
   // Save Employee in the database
-  Employee.create(employee, (err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the Employee.",
-      });
-    else res.send(data);
+  Employee.create(employee).then (result=>{
+    console.log(result);
+    res.status(200).send(result);
+  }).catch(error=>{
+      req.status(500).send("An error occured");
   });
 };
 
 // Retrieve all Employees from the database.
 exports.findAll = (req, res) => {
-  Employee.getAll((err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving employees.",
-      });
-    else res.send(data);
+  Employee.findAll().then (result=>{
+      res.status(200).send(result);
+  }).catch(error=>{
+      req.status(500).send("An error occured");
   });
 };
 

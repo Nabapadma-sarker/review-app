@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import "./EditEmployee.css";
 import Card from "../../../../components/Card/Card";
+import { EmployeeContext } from "../../../../contexts/EmployeeContext";
+import axios from "axios";
 
 const EditEployee = ({ closeModal, props }) => {
   const [employee, setEmployee] = useState({
@@ -10,6 +12,8 @@ const EditEployee = ({ closeModal, props }) => {
   });
 
   const [error, setError] = useState({});
+
+  const { addEmployee } = useContext(EmployeeContext);
 
   const { name, email, phone } = employee;
 
@@ -40,6 +44,17 @@ const EditEployee = ({ closeModal, props }) => {
       email,
       phone,
     };
+
+    
+    axios.post('http://localhost:8000/employees', newEmployee)
+    .then(function (response) {
+      console.log(response);
+      // setEmployee();
+      addEmployee(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
     console.log(newEmployee);
 
