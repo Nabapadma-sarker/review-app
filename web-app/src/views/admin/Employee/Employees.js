@@ -7,20 +7,42 @@ import AddEmployee from "./AddEmployee/AddEmployee";
 import EditEmployee from "./EditEmployee/EditEployee";
 import { EmployeeContext } from "../../../contexts/EmployeeContext";
 import Modal from "../../../components/Modal/Modal";
+import axios from "axios";
 
 const Employees = () => {
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
+  const [editEmployee, setEditEmployee] = useState([]);
   const [reviewModal, setReviewModal] = useState(false);
-  const { employees } = useContext(EmployeeContext);
+  const { employees, removeEmployee } = useContext(EmployeeContext);
 
   const modalToggle = () => {
     setModal(!modal);
   };
 
+  const editModalData = (employee) => {
+    console.log(employee);
+    setEditEmployee(employee);
+    setEditModal(!editModal);
+  };
+
+
   const editModalToggle = () => {
     setEditModal(!editModal);
   };
+
+  const deleteEmployee = (employee)=>{
+    axios.delete(`http://localhost:8000/employees/${employee.id}`)
+    .then((response) => {
+      console.log(response);
+      if(response.data){
+        removeEmployee(employee.id);
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   const reviewModalToggle = () => {
     setReviewModal(!reviewModal);
@@ -51,7 +73,8 @@ const Employees = () => {
             employees.map((employee) => (
               <Employee
                 open={reviewModalToggle}
-                openEditModal={editModalToggle}
+                openEditModal={editModalData}
+                employDelete={deleteEmployee}
                 key={employee.id}
                 employees={employee}
               />
@@ -79,7 +102,7 @@ const Employees = () => {
           <div className="back-drop" onClick={editModalToggle}></div>
           <div className="modal-wrap">
             <div className="modal-content">
-              <EditEmployee closeModal={editModalToggle} />
+              <EditEmployee closeModal={editModalToggle} editEmployeeInfo={editEmployee}/>
             </div>
           </div>
         </>

@@ -9,15 +9,8 @@ exports.create = (req, res) => {
     });
   }
 
-  // Create a Employee
-  const employee = new Employee({
-    name: req.body.name,
-    email: req.body.email,
-    phone: req.body.phone,
-  });
-
   // Save Employee in the database
-  Employee.create(employee).then (result=>{
+  Employee.create(req.body).then (result=>{
     console.log(result);
     res.status(200).send(result);
   }).catch(error=>{
@@ -52,47 +45,43 @@ exports.findOne = (req, res) => {
 };
 
 // Update a Employee identified by the id in the request
-exports.update = (req, res) => {
+exports.update = async (req, res) => {
   // Validate Request
   if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!",
     });
   }
-
-  Employee.updateById(
-    req.params.employeeId,
-    new Employee(req.body),
-    (err, data) => {
-      if (err) {
-        if (err.kind === "not_found") {
-          res.status(404).send({
-            message: `Not found Employee with id ${req.params.employeeId}.`,
-          });
-        } else {
-          res.status(500).send({
-            message: "Error updating Employee with id " + req.params.employeeId,
-          });
-        }
-      } else res.send(data);
-    }
-  );
+  const saveEmployee = await Employee.findByPk(req.params.employeeId);
+  if (saveEmployee === null) {
+    console.log('Not found!');
+  } 
+  else {
+    saveEmployee.update(req.body)
+    .then((response)=>{
+      console.log(response.dataValues);
+      res.send(response.dataValues);
+    })
+    .catch(error=>{
+         console.log(error);
+         req.status(500).send("An error occured");
+     });
+  }
 };
 
 // Delete a Employee with the specified id in the request
 exports.delete = (req, res) => {
-  Employee.remove(req.params.employeeId, (err, data) => {
-    if (err) {
-      if (err.kind === "not_found") {
-        res.status(404).send({
-          message: `Not found EmployeeId with id ${req.params.employeeId}.`,
-        });
-      } else {
-        res.status(500).send({
-          message:
-            "Could not delete EmployeeId with id " + req.params.employeeId,
-        });
-      }
-    } else res.send({ message: `EmployeeId was deleted successfully!` });
-  });
+  Employee.destroy({
+    where: {
+      id: req.params.employeeId
+    }
+  })
+  .then((response)=>{
+    console.log(response);
+    res.status(200).send(response.toString());
+  })
+  .catch(error=>{
+       console.log(error);
+       req.status(500).send("An error occured");
+   });
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import Photo from "../../../assets/images/profile.jpg";
 
-const Review = ({ employees, open, openEditModal }) => {
+const Employee = ({ employees, open, openEditModal, employDelete }) => {
 
   const { name, email, phone } = employees;
   return (
@@ -34,10 +34,10 @@ const Review = ({ employees, open, openEditModal }) => {
         <button type="button" className="btn btn-edit" onClick={open}>
           Review
         </button>
-        <button type="button" className="btn btn-close" onClick={openEditModal}>
+        <button type="button" className="btn btn-close" onClick={()=>{ openEditModal(employees)}}>
           Edit
         </button>
-        <button type="button" className="btn btn-remove">
+        <button type="button" className="btn btn-remove" onClick={()=>{ employDelete(employees)}}>
           Remove
         </button>
       </div>
@@ -45,4 +45,4 @@ const Review = ({ employees, open, openEditModal }) => {
   );
 };
 
-export default Review;
+export default Employee;

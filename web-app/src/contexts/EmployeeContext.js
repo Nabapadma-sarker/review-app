@@ -44,10 +44,10 @@ const EmployeeContextProvider = (props) => {
     );
   };
 
-  const editEmployee = (id, editEmployee) => {
+  const editEmployee = (editEmployee) => {
     setEmployee(
       employees.map((employee) =>
-        employee.id === id ? editEmployee : employee
+        employee.id === editEmployee.id ? editEmployee : employee
       )
     );
   };
