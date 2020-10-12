@@ -7,10 +7,11 @@ const Header = () => {
     <nav className="navbar">
       <div className="container navbar-wrapper">
         <Link className="navbar-brand" to="/admin/employees">
-          <img
+          {/* <img
             src="https://image.paypay.ne.jp/page/common/images/img_logo.png"
             alt="logo"
-          />
+          /> */}
+          <i className="fab fa-accusoft fa-3x"></i>
         </Link>
 
         <ul className="navbar-nav">

@@ -1,5 +1,5 @@
-const Review = require("../models/review.model");
-const PerformanceReview = require("../models/review.model");
+const Review = require("../models/review");
+const PerformanceReview = require("../models/review");
 
 // Create and Save a new PerformanceReview
 exports.create = (req, res) => {

@@ -112,3 +112,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Backend
+
+first we need to .env.example to .end file creation and set your database details. then 
+### `npm install`
+
+then we need to migrate the migrations.
+
+### `npx sequelize-cli db:migrate`
+
+### `npm start`
+backend port default 8000.
+

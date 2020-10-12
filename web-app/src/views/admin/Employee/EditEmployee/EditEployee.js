@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import "./EditEmployee.css";
 import Card from "../../../../components/Card/Card";
+import { EmployeeContext } from "../../../../contexts/EmployeeContext";
+import axios from "axios";
 
-const EditEployee = ({ closeModal, props }) => {
-  const [employee, setEmployee] = useState({
-    name: "John Deoe",
-    email: "example@example.com",
-    phone: "777-7777-7777",
-  });
+const EditEployee = ({ closeModal, editEmployeeInfo }) => {
+  const [employee, setEmployee] = useState(editEmployeeInfo);
 
   const [error, setError] = useState({});
+
+  const { editEmployee } = useContext(EmployeeContext);
 
   const { name, email, phone } = employee;
 
@@ -35,13 +35,33 @@ const EditEployee = ({ closeModal, props }) => {
       });
     }
 
-    const newEmployee = {
+    const content = {
       name,
       email,
       phone,
     };
+    console.log(employee.id);
+    const url = `http://localhost:8000/employees/${employee.id}`;
+    axios.put(url, content).then(response => {
+      console.log(response);
+      editEmployee(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
-    console.log(newEmployee);
+
+    // axios.post('http://localhost:8000/employees', newEmployee)
+    // .then(function (response) {
+    //   console.log(response);
+    //   // setEmployee();
+    //   addEmployee(response.data);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+
+    // console.log(newEmployee);
 
     setEmployee({
       name: "",

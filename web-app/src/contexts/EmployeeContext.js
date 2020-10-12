@@ -44,17 +44,17 @@ const EmployeeContextProvider = (props) => {
     );
   };
 
-  const editEmployee = (id, editEmployee) => {
+  const editEmployee = (editEmployee) => {
     setEmployee(
       employees.map((employee) =>
-        employee.id === id ? editEmployee : employee
+        employee.id === editEmployee.id ? editEmployee : employee
       )
     );
   };
 
   // Get request by axios
   useEffect(() => {
-    axios.get("http://localhost:8080/employees").then((response) => {
+    axios.get("http://localhost:8000/employees").then((response) => {
       setEmployee(response.data);
     });
   }, []);

@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 
 const cors = require("cors");
 
-const employeeRoutes = require("./app/routes/employee.routes");
-const reviewRoutes = require("./app/routes/review.routes");
-
+const employeeRoutes = require("./routes/employee.routes");
+const reviewRoutes = require("./routes/review.routes");
+require('dotenv').config();
 const app = express();
 
 app.use(cors());
@@ -20,7 +20,7 @@ app.use(employeeRoutes);
 app.use(reviewRoutes);
 
 // Node/Express server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.APP_PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
